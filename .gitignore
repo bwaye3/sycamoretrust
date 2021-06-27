@@ -23,6 +23,9 @@ _sql
 # Ignore testing related files
 /sites/simpletest
 
+/web/example.gitignore
+/web/INSTALL.txt
+/web/README.md
 # Ignore drupal core (if not versioning drupal sources)
 #/web/core
 #/web/modules
