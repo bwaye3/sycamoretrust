@@ -1,73 +1,52 @@
 # gitignore template for Drupal 8 projects
 #
 # earlier versions of Drupal are tracked in `community/PHP/`
-#_logo
-#_sql
+_sql
 # Ignore configuration files that may contain sensitive information
-#/sites/*/*settings*.php
-/sites/*/*services*.yml
-/sites/development.services.yml
-/sites/default/settings.local.php
-#/sites/default/settings.php
-/sites/default/files/php/twig/
-#/wp-content
-#/wp-content/*/uploads
-#/wp-content/*/uploads/
-# wp-content/uploads
-#/wp-content/uploads
-
+/web/sites/*/*settings*.php
+/web/sites/*/*services*.yml
+/web/sites/development.services.yml
+/web/sites/default/settings.local.php
+/web/sites/default/settings.php
 # Ignore paths that may contain user-generated content
-#/sites/*/files
-#/sites/*/public
-#/sites/*/private
-#/sites/*/files-public
-#/sites/*/files-private
-#/sites/default/files/php/
-#/sites/default/files/css/
-#/sites/default/files/js/
-#/sites/default/files/tmp/
-/profiles/
-
+/web/sites/*/files
+/web/sites/*/public
+/web/sites/*/private
+/web/sites/*/files-public
+/web/sites/*/files-private
 
 # Ignore paths that may contain temporary files
-#/sites/*/translations
-#/sites/*/tmp
-#/sites/*/cache
+/web/sites/*/translations
+/web/sites/*/tmp
+/web/sites/*/cache
 
-#robots.txt
 # Ignore testing related files
 /sites/simpletest
 
 # Ignore drupal core (if not versioning drupal sources)
-#/core
-#/modules
+#/web/core
+#/web/modules
 #/vendor
-#/.csslintrc
-#/.editorconfig
-#/.eslintignoreconfig
-#/.eslintrc.json
-#/.gitattributes
-_sql
+#/web/.csslintrc
+#/web/.editorconfig
+#/web/.eslintignore
+#/web/.eslintrc.json
+#/web/.gitattributes
+/web/.htaccess
 #/autoload.php
 #/composer.lock
-#/index.php
-#/robots.txt
-#/update.php
-#.config
+#/web/index.php
+#/web/robots.txt
+#/web/update.php
+#/web/web.config
 /example.gitignore
-/profiles/README.txt
-/sites/README.txt
-/sites/example.sites.php
-/sites/example.settings.local.php
-/themes/README.txt
-/LICENSE.txt
-/README.txt
-web/README.txt
-web/example.gitignore
-web/profiles/
-web/robots.txt
-#web/sites/
-web/themes/README.txt
+/web/profiles/README.txt
+/web/sites/README.txt
+/web/sites/example.sites.php
+/web/sites/example.settings.local.php
+/web/themes/README.txt
+/web/LICENSE.txt
+/web/README.txt
 
 # Ignore OS garbage
 .DS_Store
@@ -79,7 +58,6 @@ web/themes/README.txt
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
-.idea/
 .idea
 .idea/**/workspace.xml
 .idea/**/tasks.xml
@@ -138,6 +116,8 @@ fabric.properties
 # .idea/misc.xml
 # *.ipr
 .idea/workspace.xml
+/.idea/workspace.xml
+
 # Sonarlint plugin
 .idea/sonarlint
 # End of https://www.gitignore.io/api/phpstorm
@@ -155,8 +135,8 @@ node_modules
 php.ini
 
 # Ignore SimpleTest multi-site environment.
-websites/simpletest
+web/sites/simpletest
 
 #ignore logs
 error_log
-INSTALL.txt
+affiliate.mha.dd
