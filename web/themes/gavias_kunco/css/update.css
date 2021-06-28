@@ -15,6 +15,7 @@ body div.body-page {
 .site-branding-logo {
   max-height: inherit;
 }
+
 .site-branding-logo img {
   max-height: 80px;
   width: auto;
@@ -29,13 +30,16 @@ body div.body-page {
 .order-information {
   margin-bottom: 45px;
 }
+
 .order-information .field__label, .order-information .views-field-title {
   font-weight: 600;
   color: #222;
 }
+
 .order-information table {
   margin-top: 30px;
 }
+
 .order-information table thead th {
   font-weight: 600;
   color: #222;
@@ -44,6 +48,7 @@ body div.body-page {
 .checkout-pane-payment-information {
   margin-bottom: 20px;
 }
+
 .checkout-pane-payment-information .field--name-address {
   width: 100%;
   float: left;
@@ -53,27 +58,34 @@ body div.body-page {
   float: left;
   width: 100%;
 }
+
 .path-user .order-information > .field {
   float: left;
   margin-right: 20px;
   width: 30%;
 }
+
 @media (max-width: 300px) {
   .path-user .order-information > .field {
     width: 100%;
   }
 }
+
 .path-user .order-information > .field .field__label {
   font-weight: 600;
   color: #222;
 }
+
 .path-user .order-information > .field.field--name-order-items, .path-user .order-information > .field.field--name-total-price {
   width: 100%;
   margin-top: 20px;
   margin-right: 0;
 }
 
-.form-item-payment-information-add-payment-method-billing-information-copy-to-address-book{width: 100%;float: left;}
+.form-item-payment-information-add-payment-method-billing-information-copy-to-address-book {
+  width: 100%;
+  float: left;
+}
 
 .alert {
   border-radius: 0 !important;
