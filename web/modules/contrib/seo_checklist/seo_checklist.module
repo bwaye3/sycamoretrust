@@ -120,18 +120,6 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#url' => Url::fromUri('https://getcomposer.org/'),
         ],
       ],
-      'install_console_command_line_tool' => [
-        '#title' => t('[Optional] Install Drupal Console command line tool'),
-        '#description' => t('Drupal Console is a newer command line tool that also helps you to install modules faster.'),
-        '#book_ref' => [
-          '#chapter' => 1,
-        ],
-        '#seo_training_camp' => Url::fromUri('https://drupalconsole.com/docs'),
-        'project_page' => [
-          '#text' => t('Download'),
-          '#url' => Url::fromUri('https://drupalconsole.com/'),
-        ],
-      ],
       'install_drush_command_line_tool' => [
         '#title' => t('[Optional] Install Drush command line tool'),
         '#description' => t('Drush is a command line tool for Drupal that you can use, among other things, to install modules faster.'),
@@ -145,7 +133,7 @@ function seo_checklist_checklistapi_checklist_items(): array {
         ],
       ],
       'show_cli_commands' => [
-        '#title' => t('[Optional] Check here to show suggested Composer, Drupal Console, and Drush commands in SEO Checklist item descriptions.'),
+        '#title' => t('[Optional] Check here to show suggested Composer and Drush commands in SEO Checklist item descriptions.'),
       ],
     ],
 
@@ -267,6 +255,16 @@ function seo_checklist_checklistapi_checklist_items(): array {
         '#module' => 'metatag',
         '#seo_training_camp' => Url::fromUri('https://dev.acquia.com/blog/drupal-8-module-of-the-week-metatag/17/02/2016/9716'),
       ],
+      'install_and_enable_schema_metatag' => [
+        '#title' => t('Install and Enable Schema Metatag module'),
+        '#description' => t('Extends the Metatag module to display structured data as JSON LD in the head of web pages. Install the appropriate sub-modules to add corresponding functionality for configuration in the next step.'),
+        '#module' => 'schema_metatag',
+        'test' => [
+          '#text' => t('Lullabot Blog Post'),
+          '#url' => Url::fromUri('https://www.lullabot.com/articles/create-seo-juice-by-adding-json-ld-structured-data-to-drupal-8'),
+          '#weight' => 5,
+        ],
+      ],
       'set_metatags_for_your_site' => [
         '#title' => t('Set Metatags for your site'),
         '#description' => t('Set up the metatags for your content.'),
@@ -302,7 +300,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
       '#description' => t('Set your site up with the search engines and submit your XML sitemap.'),
       'install_and_enable_xml_sitemap_module' => [
         '#title' => t('Install and Enable XML Sitemap module'),
-        '#description' => t('Creates an XML Sitemap of your content that you can submit to the search engines.'),
+        '#description' => t(
+          'Creates an XML Sitemap of your content that you can submit to the search engines. (For an alternative to the XML Sitemap module, consider <a href=":url">Simple XML sitemap</a>.)',
+          [':url' => 'https://www.drupal.org/project/simple_sitemap']
+        ),
         '#module' => 'xmlsitemap',
         '#book_ref' => [
           '#chapter' => 5,
@@ -369,7 +370,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
       ],
       'install_and_enable_google_tag_manager_module' => [
         '#title' => t('Install and Enable Google Tag Manager Module'),
-        '#description' => t('Makes setting up your Google Analytics easy and provides the ability to install additional 3rd party scripts and to track visitor activity that is not included with a base Google Analytics installation.'),
+        '#description' => t(
+          'Makes setting up your Google Analytics easy and provides the ability to install additional 3rd party scripts and to track visitor activity that is not included with a base Google Analytics installation. (For an alternative to Google Analytics, consider <a href=":url">Matomo Analytics</a>.)',
+          [':url' => 'https://www.drupal.org/project/matomo']
+        ),
         '#seo_guide' => [
           '#title' => t('Google Tracking Submission'),
           '#url' => 'https://www.volacci.com/blog/installing-google-tag-manager-analytics-search-console-drupal-9#install',
@@ -1038,7 +1042,6 @@ function _seo_checklist_preprocess_checklist_items(array $items): array {
             // Add CLI commands to description.
             $item['#description'] .= '</p><p class="cli-commands">'
               . "Composer: <code>composer require drupal/{$module_name}</code><br />"
-              . "Drupal Console: <code>drupal module:install {$module_name} --latest</code><br />"
               . "Drush: <code>drush dl {$module_name} && drush en {$module_name}</code>";
 
             // Add module links.
